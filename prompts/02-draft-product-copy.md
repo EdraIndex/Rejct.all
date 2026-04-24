@@ -1,31 +1,41 @@
 # Draft product copy
 
 ## Purpose
-Generate product name and description for a new piece.
+Generate product copy for a new piece, aligned to Brand Bible §06 and §09.
 
 ## Input
-- Piece type (e.g., oversized tee, work shirt, trouser)
-- Material
-- Notable construction detail
-- What this piece refuses (trend, category, assumption)
+- SKU number (next in sequence)
+- Piece type (e.g., tee, sleeveless, shirt)
+- Colourway (default palette: Wine Red, Olive, Tonal)
+- Graphics / placement (chest, back, collar, hem)
+- Fabric in feeling-language (Bible §06 examples)
 
 ## Prompt
 
 ```
-Write product copy for Rejct.all. Follow CLAUDE.md tone rules strictly.
+Write product copy for rejct.all. Follow CLAUDE.md voice rules and Brand Bible §06 and §09.
 
-Piece: [piece type]
-Material: [material]
-Construction: [detail]
-Refusal: [what this piece refuses]
+SKU: [RJ-XXX]
+Piece: [type]
+Colourway: [colourway]
+Graphics: [what is on the garment and where]
+Fabric feel: [feeling-language, no specs]
 
-Produce:
-1. Product name — 1 to 3 words. No version numbers.
-2. Product description — maximum 40 words. State what it is, what it refuses, what it's made of. No story arc. No hype.
-3. One-line Hindi accompaniment (Devanagari) that stands on its own. If the line would be decorative, return "none".
+Format:
+[SKU] — [Name · Colourway]
+₹[price]
+[1–2 sentence description — what is on the garment. No story arc. No hype. No explanation of brand philosophy.]
+[Material line — feeling, not specs.]
+
+Hard constraints:
+- Brand name lowercase (`rejct.all`).
+- No fabric specifications (GSM, blend percentages, "premium", "luxury", "heavyweight").
+- No hype words (`drop` as hype, `collab`, `cop`, `fire`, `goes hard`).
+- No exclamation points. No emoji.
+- Description mentions where the design sits (chest / back / collar / hem).
 ```
 
 ## Output expectations
-- A name that a trend brand could not have written.
-- A description under 40 words.
-- A Hindi line that carries meaning the English does not — or `none`.
+- Product block in the exact format above.
+- Copy a trend-chasing brand could not have written.
+- Material line in Bible-style feeling language.

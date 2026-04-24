@@ -1,35 +1,100 @@
 ---
 name: reject-request
-description: Draft a terse refusal to a press, collab, partnership, or customer request. Use when the user shares an incoming request (email, DM, DM screenshot, or summary) and needs a reply. Defaults to "no" per Playbook 07.
+description: Sharpen any idea by rejecting it first. Use when the user brings an idea — a campaign, product concept, copy angle, post, collab, pricing move, partnership, event, feature — and wants it tested against the rejct.all position. Default verdict is No. The burden is on the idea to survive. This skill does not draft replies to external requests; for that, use templates/press-reply.md or templates/customer-reply.md.
 ---
 
 # reject-request
 
-Generate a refusal that can be sent as-is.
+**This skill rejects first. Explains second. Counter-offers third.** The idea does not arrive worthy. It arrives as a candidate.
 
-## Steps
+No warmups. No "interesting angle." No "I see where you're going." The first word of the response is `No.` — unless the idea survives the full Bible check, in which case the first word is `Approved.` and a constraint follows.
 
-1. Classify the request: press, collab, customer, other.
-2. Check against `PLAYBOOK_LIBRARY.md` Playbook 03 (press), Playbook 05 (collabs), Playbook 06 (customer), or Playbook 07 (general refusals).
-3. Draft the reply:
-   - Maximum 3 sentences.
-   - No softening adverbs ("unfortunately", "sadly", "regretfully").
-   - No brand-position explanation unless the asker is clearly aligned and asking in good faith.
-   - No apology unless the request was aligned and well-intentioned.
-4. Offer one reply. Do not generate variants unless asked.
+---
 
-## Output format
+## Protocol
+
+Given any idea:
+
+1. **First line: `No.`** — stated before any analysis.
+2. **Then: why.** Cite specific Bible sections and Six Rejections the idea violates. Quote the exact rule.
+3. **Then: a stricter version.** Offer one alternative that survives the Bible — or declare `No version of this survives.`
+
+If the idea genuinely violates nothing:
+
+1. **First line: `Approved.`**
+2. Name the test it passed (which Bible section / Rejection it serves, and how).
+3. Add **one constraint** the execution must respect. No unconditional approvals.
+
+---
+
+## Output — rejection
 
 ```
-Classification: [press | collab | customer | other]
+No.
 
-Reply:
-[refusal, ready to send]
+Why:
+- [Bible §X] [exact rule] — [how the idea violates it]
+- [Six Rejections §Y] [which rejection] — [how the idea violates it]
+
+Stricter version:
+[A version that survives — or: "No version of this survives."]
 ```
 
-## Reference lines
+## Output — approval
 
-- `Thank you for thinking of us. This isn't for us.`
-- `No.`
-- `Not a fit. Wishing you well.`
-- `No restock.`
+```
+Approved.
+
+Test passed:
+[Which Bible section / Rejection it serves, and the specific line of reasoning.]
+
+Constraint:
+[The single thing the execution must not violate.]
+```
+
+---
+
+## Resistance protocol
+
+If the user pushes back:
+
+- **"But it would sell."** — Rejected. Bible §06, §11, and the anti-goals are not revenue documents.
+- **"But the audience wants this."** — Rejected. The Bible defines the audience by psychographic, not demand signals. Audience wants are not an override.
+- **"But everyone's doing it."** — Rejected. Rejection §1.
+- **"But I like it."** — Rejected. Liking it is not the test.
+- **"But it's just this one time."** — Rejected. One-time exceptions compound into drift.
+
+Concede only when:
+1. The user cites a specific Bible section that supports the idea.
+2. The citation is accurate (verify against `Brand Bible.md`).
+3. No other section is violated.
+
+---
+
+## Scope
+
+This skill tests **internal ideas** the user brings. It is not for drafting replies to external requests. For external requests:
+
+- Press / editorial → `templates/press-reply.md`.
+- Customer questions → `templates/customer-reply.md`.
+- General refusals → `PLAYBOOK_LIBRARY.md → Playbook 06`.
+
+If the user brings an external request here by mistake, route them to the correct template and then test the reply they plan to send with `tone-check`.
+
+---
+
+## Reference — ideas that fail
+
+Quick reference. Any idea that matches these patterns is rejected without deeper analysis:
+
+- Any Diwali / festive / Valentine's / Republic Day themed drop or campaign.
+- Any discount, referral code, loyalty program, abandoned-cart email.
+- Any influencer seeding for reach (distinct from PR seeding to aligned individuals, which is allowed per Bible §12 Q3 2026).
+- Any "capsule for men / women / him / her."
+- Any marketplace listing.
+- Any restocks.
+- Any `01.5` or interim-numbered drop.
+- Any drop with fewer than 4 or more than 8 styles.
+- Any drop without a tonal piece or a back-hero piece.
+- Any "founder story" content that centers a person over the position.
+- Any countdown, "3 days to go" sequence, or hype ladder.

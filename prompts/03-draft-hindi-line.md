@@ -11,17 +11,18 @@ Generate a standalone Hindi line in Devanagari for a site, drop, or piece.
 ## Prompt
 
 ```
-Write one Hindi line in Devanagari for Rejct.all. Follow CLAUDE.md tone rules.
+Write one Hindi line in Devanagari for rejct.all. Follow CLAUDE.md voice rules and Brand Bible §07 (bilingual, never translated).
 
 Context: [context]
 Feeling: [feeling]
 Paired English (do not translate this): [English line or "none"]
 
 Constraints:
-- Devanagari only. No transliteration.
+- Devanagari only. No Roman transliteration.
 - Maximum 8 words.
-- Must stand alone as a statement — not as a translation of the English.
+- Must stand alone — not a translation of the English.
 - No irony, no hype, no devotional register, no film-dialogue register.
+- Register to match Bible reference lines: `सब कुछ अस्वीकार करो।`, `पहनो जैसे मतलब हो।`, `सूती। भारी। ईमानदार।`.
 
 Produce three options. For each, add a one-line note on the nuance (what it says that plain English cannot).
 ```

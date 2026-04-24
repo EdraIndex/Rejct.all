@@ -5,7 +5,7 @@ Status: accepted
 
 ## Context
 
-Rejct.all was a position in the founder's head with no documented system. Every decision risked drift.
+`rejct.all` was a position in the founder's head with no documented system. Every decision risked drift. (Note: the OS adopted here was superseded later the same day by the Brand Bible alignment — see `2026-04-24-align-to-brand-bible.md`.)
 
 ## Decision
 
